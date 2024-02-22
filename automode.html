@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Mode</title>
+    <script src="https://kit.fontawesome.com/6e94451bee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/index.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;500;700&display=swap');
+
+        body {
+            background-position: center;
+            background-size: cover;
+            background-image: url("images/ai-background.png");
+            background-attachment: fixed;
+            display: flex;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFF;
+            font-family: Montserrat;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            letter-spacing: 2.1px;
+            text-transform: capitalize;
+            margin: 0px;
+        }
+
+        h3 {
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+            font-family: Montserrat;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 800;
+            letter-spacing: 1.26px;
+            text-transform: capitalize;
+            margin: 0px;
+        }
+
+        .heading {
+            padding-top: 150px;
+        }
+
+        .segment-card {
+            border-radius: 50px;
+            width: 80%;
+            background: white;
+            padding: 10px;
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .segment-card img {
+            width: 400px;
+            min-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            box-shadow: 0px 8px 51px 0px rgba(0, 0, 0, 0.15);
+            ;
+            border-radius: 50px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        input:checked+.slider {
+            background-color: #FF9393;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #FF9393;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .segment {
+            color: #3A3A3B;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+        }
+
+        .moisture {
+            color: #3A3A3B;
+            font-family: Montserrat;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+
+        .history {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 200px;
+            align-items: flex-start;
+            margin-top: 46px;
+        }
+
+        .history h6 {
+            color: #46BA4D;
+            text-align: right;
+            font-family: Montserrat;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: capitalize;
+            margin: 0px;
+        }
+
+        .history img {
+            width: 20px;
+            height: 20px;
+            min-width: 0px;
+        }
+
+        .text-items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 30px;
+        }
+
+        .segment-card:nth-child(3) {
+            margin-right: auto;
+            /* This pushes the item to the right, creating the maximum gap */
+        }
+        .segments {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            align-items: center;
+        }
+        @media screen and (max-width: 1280px) {
+            .segment-card {
+                width: 1200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="nav">
+		<li class="nav-name">NAME
+		</li>
+		<ul>
+			<li><a href="" style="padding: 25px; text-decoration: none; color: #3A3A38;">Home</a></li>
+			<li><a href="#about-us" style="padding: 25px; text-decoration: none; color: #3A3A38;">About Us</a></li>
+			<li><a href="" style="padding: 25px; text-decoration: none; color: #3A3A38;">Plant Care</a></li>
+			<li><a href="#ourgallery" style="padding: 25px; text-decoration: none; color: #3A3A38;">Gallery</a></li>
+			<li><a href="" style="padding: 25px; text-decoration: none; color: #3A3A38;">New</a></li>
+			<li><a href="" style="padding: 25px; color: #3A3A38">|</a></li>
+			<li>
+				<a href="" style="padding: 28px; text-decoration: none; color: #3A3A38;">
+					<button class="lang">Eng <i class="fa-solid fa-caret-down" style="color: #000000;"></i></button>
+				</a>
+                <li>
+                    <a href="./signup.html" style="padding: 28px; text-decoration: none; color: #0A4C36;"><a href="./signup.html"><img style=" width: 20%" src="images/Notification Bell.png"></a></a>
+                </li>
+                <li>
+                    <a href="./signin.html" style="padding: 28px; color: white; text-decoration: none; color: #3A3A38;">
+                        <img style=" width: 20%"   src="images/profile.png">
+                    </a>
+                </li>
+
+            </ul>
+	</nav>
+
+
+    <div class="heading">
+        <h3> Sit Back And Relax,</h3>
+        <h1>Let AI Do The Hardwork!</h1>
+    </div>
+    <div class="segments">
+    <div class="segment-card">
+        <img src="images/manual-mode-2.png" alt="man-mode">
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="text-items">
+                <h1 class="segment">
+                    Segment 1
+                </h1>
+                <h3 class="moisture"> Moisture Level:</h3>
+                <h3 class="moisture"> Pump Status:</h3>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="history">
+                <img src="images/history.png" alt="history">
+                <h6>Show History</h6>
+            </div>
+        </div>
+    </div>
+    <div class="segment-card">
+        <img src="images/manual-mode-1.png" alt="man-mode">
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="text-items">
+                <h1 class="segment">
+                    Segment 1
+                </h1>
+                <h3 class="moisture"> Moisture Level:</h3>
+                <h3 class="moisture"> Pump Status:</h3>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="history">
+                <img src="images/history.png" alt="history">
+                <h6>Show History</h6>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
